@@ -1,11 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
-import { RxSketchLogo, RxDashboard, RxPerson, } from "react-icons/rx";
-import {HiOutlineShoppingBag} from "react-icons/hi"
-import {FiSettings} from "react-icons/fi"
+import { RxSketchLogo, RxDashboard, RxPerson } from "react-icons/rx";
+import { HiOutlineShoppingBag } from "react-icons/hi";
+import { FiSettings } from "react-icons/fi";
 
-
-function Sidebar({ children }) {
+function Sidebar({ children }: { children: ReactNode }) {
   return (
     <div className="flex">
       <div className="fixed w-20 h-screen p-4 bg-white border-r-[1px] flex flex-col justify-between">
@@ -27,16 +26,15 @@ function Sidebar({ children }) {
             </div>
           </Link>
           <Link href="/orders">
-          <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
-            <HiOutlineShoppingBag size={20} />
-          </div>
-        </Link>
-        <Link href="/">
-        <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
-          <FiSettings size={20} />
-        </div>
-      </Link>
-          
+            <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
+              <HiOutlineShoppingBag size={20} />
+            </div>
+          </Link>
+          <Link href="/">
+            <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
+              <FiSettings size={20} />
+            </div>
+          </Link>
         </div>
       </div>
       <main className="ml-20 w-full">{children}</main>
@@ -45,4 +43,3 @@ function Sidebar({ children }) {
 }
 
 export default Sidebar;
-Sidebar;
